@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "DeCatenator"
+version = "0.1.0"
+description = "Extract code blocks from Markdown headings into real source files."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Philip Orange", email = "git@philiporange.com"}]
+requires-python = ">=3.8"
+keywords = ["markdown", "code", "tooling", "documentation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Topic :: Text Processing :: Markup :: Markdown",
+    "Topic :: Utilities",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Software Development :: Code Generators"
+]
+
+[project.urls]
+Homepage = "https://github.com/philiporange/decatenator"
+Repository = "https://github.com/philiporange/decatenator"
+Issues = "https://github.com/philiporange/decatenator/issues"
+
+[project.scripts]
+decat = "decatenator.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

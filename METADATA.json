@@ -1,0 +1,55 @@
+{
+  "name": "decatenator",
+  "short_description": "A command-line tool that unpacks code embedded in Markdown files into real source files.",
+  "long_description": "DeCatenator (decat) is a command-line utility that extracts code blocks from Markdown files and writes them to actual source files on disk. It identifies code locations using level-2 or level-3 Markdown headings that contain file paths (e.g., `## main.py` or `### src/utils/helpers.js`), then extracts the following code content (either from fenced code blocks or unfenced text) and writes it to the corresponding file path. The tool automatically creates parent directories as needed and supports reading from files or stdin. It's designed as the inverse of the catenator tool, which embeds source files into Markdown.",
+  "keywords": [
+    "markdown",
+    "code-extraction",
+    "cli-tool",
+    "code-generation",
+    "file-writing",
+    "markdown-parser",
+    "developer-tools",
+    "documentation"
+  ],
+  "primary_language": "Python",
+  "languages": [
+    "Python"
+  ],
+  "frameworks": [
+    "argparse",
+    "setuptools"
+  ],
+  "modules": [
+    {
+      "path": "src/decatenator/_core.py",
+      "description": "Core parsing and file-writing logic with functions to extract (filepath, code) tuples from Markdown and write files to disk."
+    },
+    {
+      "path": "src/decatenator/cli.py",
+      "description": "Command-line interface entry point that handles argument parsing and routing input (file or stdin) to the core extraction functions."
+    },
+    {
+      "path": "src/decatenator/__init__.py",
+      "description": "Package interface that re-exports core functions (extract_files, write_files) and version information for programmatic use."
+    },
+    {
+      "path": "tests/test_core.py",
+      "description": "Comprehensive test suite covering fenced and unfenced code blocks, mixed formats, edge cases, and error handling."
+    }
+  ],
+  "git": {
+    "is_repo": true,
+    "remote_url": "https://github.com/philiporange/decatenator.git",
+    "github_name": "philiporange/decatenator",
+    "default_branch": "master",
+    "last_commit": "2025-06-20T10:14:42+01:00"
+  },
+  "stats": {
+    "files": 12,
+    "lines_of_code": 644,
+    "size_bytes": 58004
+  },
+  "generated_at": "2025-12-06T22:48:54.250563",
+  "generator_version": "1.0.0"
+}
